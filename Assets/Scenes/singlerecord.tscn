@@ -1,0 +1,104 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5fwgginx83tg"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Singlerecord.cs" id="1_6c3h4"]
+[ext_resource type="Texture2D" uid="uid://72axktfkjj6l" path="res://Assets/Artworks/fetchtheboltcutters.png" id="1_ka3id"]
+[ext_resource type="FontFile" uid="uid://8uqy2j45uw5t" path="res://Assets/Fonts/ModernDOS8x14.ttf" id="2_vndo3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_05hcw"]
+font = ExtResource("2_vndo3")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_l4xo8"]
+font = ExtResource("2_vndo3")
+font_size = 40
+
+[node name="Control" type="Control"]
+top_level = true
+light_mask = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 960.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6c3h4")
+
+[node name="Shadow" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -40.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+
+[node name="CoverBG" type="TextureRect" parent="."]
+texture_filter = 2
+layout_mode = 0
+offset_left = 128.0
+offset_top = 81.0
+offset_right = 168.0
+offset_bottom = 121.0
+scale = Vector2(17.5993, 17.7211)
+texture = ExtResource("1_ka3id")
+
+[node name="ColorRect" type="ColorRect" parent="CoverBG"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 0.803922)
+
+[node name="Album Info" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 7.0
+offset_right = 40.0
+offset_bottom = 47.0
+
+[node name="Title" type="Label" parent="Album Info"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 551.0
+offset_right = 737.0
+offset_bottom = 593.0
+text = "Fetch The Bolt Cutters
+"
+label_settings = SubResource("LabelSettings_05hcw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Artist" type="Label" parent="Album Info"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 596.0
+offset_right = 737.0
+offset_bottom = 638.0
+text = "Fiona Apple				"
+label_settings = SubResource("LabelSettings_l4xo8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Price" type="Label" parent="Album Info"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 640.0
+offset_right = 737.0
+offset_bottom = 682.0
+text = "£30"
+label_settings = SubResource("LabelSettings_l4xo8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cover" type="TextureRect" parent="Album Info"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 307.0
+offset_top = 189.0
+offset_right = 347.0
+offset_bottom = 229.0
+scale = Vector2(8.56, 8.56)
+texture = ExtResource("1_ka3id")

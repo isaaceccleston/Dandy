@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3r2gmx8giiho"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Binrecord.cs" id="1_iusly"]
+[ext_resource type="FontFile" uid="uid://8uqy2j45uw5t" path="res://Assets/Fonts/ModernDOS8x14.ttf" id="2_q0iew"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fcc1u"]
+font = ExtResource("2_q0iew")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_plmdq"]
+font = ExtResource("2_q0iew")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_0pqws"]
+font = ExtResource("2_q0iew")
+font_size = 24
+
+[node name="binrecord" type="VBoxContainer"]
+clip_contents = true
+size_flags_horizontal = 6
+mouse_filter = 2
+alignment = 1
+script = ExtResource("1_iusly")
+
+[node name="artworkrect" type="TextureRect" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+stretch_mode = 4
+
+[node name="titlelabel" type="Label" parent="."]
+custom_minimum_size = Vector2(128, 16)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_fcc1u")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="artistlabel" type="Label" parent="."]
+custom_minimum_size = Vector2(128, 16)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_plmdq")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="pricelabel" type="Label" parent="."]
+custom_minimum_size = Vector2(128, 16)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_0pqws")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

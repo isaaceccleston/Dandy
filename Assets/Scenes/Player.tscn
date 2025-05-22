@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://uk652u55csna"]
+
+[ext_resource type="Texture2D" uid="uid://bdxd2cd0wx8uy" path="res://Assets/Character/Idle.png" id="1_24a7c"]
+[ext_resource type="Script" path="res://Assets/Scripts/Player.cs" id="1_nny1s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfflr"]
+atlas = ExtResource("1_24a7c")
+region = Rect2(8, 0, 16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6qmr"]
+size = Vector2(18.3056, 20)
+
+[node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
+texture_filter = 1
+collision_layer = 2
+script = ExtResource("1_nny1s")
+Speed = 350
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -14)
+texture = SubResource("AtlasTexture_gfflr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.51, -1)
+scale = Vector2(0.602, 0.1)
+shape = SubResource("RectangleShape2D_h6qmr")
