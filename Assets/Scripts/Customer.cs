@@ -21,12 +21,14 @@ public partial class Customer : CharacterBody2D
     public Sprite2D recordSprite;
     public Record chosenRecord;
 
-    public void Init(Main _main)
+    public void Run(Main _main)
     {
         this.main = _main;
         tilemap = (Node2D)GetParent();
         tilemaplayer = tilemap.GetChild<TileMapLayer>(5);
         recordSprite = GetChild<Sprite2D>(2);
+
+        PurchaseSequence();
     }
 
     public async void PurchaseSequence()

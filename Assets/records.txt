@@ -1,15 +1,15 @@
-After Laughter;Paramore;1
-Balloonerism;Mac Miller;1
-Either/Or;Elliot Smith;1
-Endless;Frank Ocean;1
-Fallen;Evanescence;1
-Fetch The Bolt Cutters;Fiona Apple;1
-Good Kid, Mad City;Kendrick Lamar;1
-Ignorance Is Bliss;Skepta;1
-Jeffery;Young Thug;1
-Kid A;Radiohead;1
-Select Ambient Works 85-92;Aphex Twin;1
-Sometimes I Might Be Introvert;Little Simz;1
-Stankonia;Outkast;1
-Stranger in the Alps;Phoebe Bridgers;1
-Love Deluxe;Sade;1
+After Laughter;Paramore;1;30
+Balloonerism;Mac Miller;1;30
+Either/Or;Elliot Smith;1;30
+Endless;Frank Ocean;1;30
+Fallen;Evanescence;1;30
+Fetch The Bolt Cutters;Fiona Apple;1;30
+Good Kid, Mad City;Kendrick Lamar;1;30
+Ignorance Is Bliss;Skepta;1;30
+Jeffery;Young Thug;1;30
+Kid A;Radiohead;1;30
+Select Ambient Works 85-92;Aphex Twin;1;30
+Sometimes I Might Be Introvert;Little Simz;1;30
+Stankonia;Outkast;1;30
+Stranger in the Alps;Phoebe Bridgers;1;30
+Love Deluxe;Sade;1;30

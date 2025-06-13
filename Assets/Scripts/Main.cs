@@ -13,33 +13,48 @@ public partial class Main : Node
     Random rng;
     [Export]
     int gameSpeed;
+    [Export]
+    bool customerSpawning;
+    [Export]
+    Control stockUI;
+    public List<Customer> customers;
 
+    // initial definitions
     public override void _Ready()
     {
         rng = new Random();
-
         balance = 0;
         records = LoadRecords("Assets/records.txt");
-
         Cheatui cheatUi = GetNode<Cheatui>("CheatUI");
         cheatUi.Init(this);
-
         customerScene = ResourceLoader.Load<PackedScene>("res://Assets/Scenes/customer.tscn");
+        customers = new List<Customer>();
     }
 
-    public void Customer()
+    public void SetStock()
+    {
+        for (int i = 1; i <= records.Count; i++)
+        {
+            GetNode<TextureRect>($"StockUI/StockGrid/StockCoverImage{i}").Texture = ImageTexture.CreateFromImage(Image.LoadFromFile(records[i - 1].artworkPath));
+            GetNode<Label>($"StockUI/StockGrid/StockCoverImage{i}/CountLabel").Text = $"{records[i - 1].inStock}";
+        }
+    }
+
+    public void CustomerInstance()
     {
         Customer customer = (Customer)customerScene.Instantiate();
         GetNode("Tilemap").AddChild(customer);
-        customer.Init(this);
-        customer.PurchaseSequence();
+        customers.Add(customer);
+        customer.Run(this);
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        if (rng.Next(gameSpeed) == 0)
+        SetStock();
+
+        if (customerSpawning && rng.Next(gameSpeed) == 0)
         {
-            Customer();
+            CustomerInstance();
         }
     }
 
@@ -59,7 +74,8 @@ public partial class Main : Node
                      details[0],
                      details[1],
                      details[2].ToInt(),
-                     $"Assets/Artworks/{details[0].Replace(" ", "").Replace("/", "").ToLower()}.png")
+                     $"Assets/Artworks/{details[0].Replace(" ", "").Replace("/", "").ToLower()}.png",
+                     details[3].ToInt())
                      );
                 }
             }
